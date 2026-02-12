@@ -29,35 +29,208 @@ font-family: "Plus Jakarta Sans", serif !important;
 
 
 /* Footer */
-.f-info-links a{
-    text-decoration: none;
-    color: #222222;
+.footer {
+    background-color: #f7f7f7;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 3rem;
 }
 
-.f-info-links a:hover {
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #717171;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #fe424d;
     text-decoration: underline;
 }
 
-.f-info-links, .f-info-socials, .f-info-brand{
-    width: 100%;
+.footer-description {
+    color: #717171;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.footer-newsletter {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.newsletter-input:focus {
+    border-color: #fe424d;
+}
+
+.newsletter-btn {
+    background-color: #fe424d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.newsletter-btn:hover {
+    background-color: #e03a45;
+    transform: scale(1.05);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.social-link {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #222222;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.f-info-socials i{
-    font-size: 1.2rem;
-    margin-right: 1rem;
+.social-link:hover {
+    background-color: #fe424d;
+    color: white;
+    transform: translateY(-3px);
 }
 
-.f-info{
-    text-align: center;
-    height: 8rem;
-    background-color: #ebebeb;
+.footer-bottom {
+    background-color: #f7f7f7;
+    border-top: 1px solid #e0e0e0;
+    padding: 1.5rem 2rem;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: space-evenly;
+    gap: 1rem;
+}
+
+.footer-copyright {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #717171;
+}
+
+.footer-copyright a {
+    color: #717171;
+    text-decoration: none;
+}
+
+.footer-copyright a:hover {
+    text-decoration: underline;
+    color: #222222;
+}
+
+.footer-dot {
+    color: #717171;
+}
+
+.footer-locale {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-locale a {
+    color: #222222;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.footer-locale a:hover {
+    text-decoration: underline;
+}
+
+.footer-locale i {
+    margin-right: 0.3rem;
+}
+
+/* Footer Responsive */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-copyright {
+        justify-content: center;
+    }
+    
+    .footer-locale {
+        justify-content: center;
+    }
 }
 
 /* cards */

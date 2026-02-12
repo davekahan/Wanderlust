@@ -1,14 +1,78 @@
-<footer>
-    <div class="f-info">
-        <div class="f-info-socials">
-            <i class="fa-brands fa-square-facebook"></i>
-            <i class="fa-brands fa-square-instagram"></i>
-            <i class="fa-brands fa-linkedin"></i>
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Support Section -->
+        <div class="footer-section">
+            <h5 class="footer-title">Support</h5>
+            <ul class="footer-links">
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">AirCover</a></li>
+                <li><a href="#">Anti-discrimination</a></li>
+                <li><a href="#">Disability support</a></li>
+                <li><a href="#">Cancellation options</a></li>
+                <li><a href="#">Report neighborhood concern</a></li>
+            </ul>
         </div>
-        <div class="f-info-brand">&copy; WanderLust private Limited</div>
-        <div class="f-info-links">
-            <a href="/privacy">privacy</a>
-            <a href="/terms">terms</a>
+
+        <!-- Hosting Section -->
+        <div class="footer-section">
+            <h5 class="footer-title">Hosting</h5>
+            <ul class="footer-links">
+                <li><a href="/listings/new">Airbnb your home</a></li>
+                <li><a href="#">AirCover for Hosts</a></li>
+                <li><a href="#">Hosting resources</a></li>
+                <li><a href="#">Community forum</a></li>
+                <li><a href="#">Hosting responsibly</a></li>
+                <li><a href="#">Airbnb-friendly apartments</a></li>
+            </ul>
+        </div>
+
+        <!-- WanderLust Section -->
+        <div class="footer-section">
+            <h5 class="footer-title">WanderLust</h5>
+            <ul class="footer-links">
+                <li><a href="#">Newsroom</a></li>
+                <li><a href="#">New features</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Gift cards</a></li>
+                <li><a href="#">Emergency stays</a></li>
+            </ul>
+        </div>
+
+        <!-- Connect Section -->
+        <div class="footer-section">
+            <h5 class="footer-title">Connect With Us</h5>
+            <p class="footer-description">Subscribe to our newsletter for travel inspiration and exclusive deals.</p>
+            <form class="footer-newsletter">
+                <input type="email" placeholder="Enter your email" class="newsletter-input">
+                <button type="submit" class="newsletter-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <div class="footer-socials">
+                <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <div class="footer-copyright">
+                <span>&copy; <%= new Date().getFullYear() %> WanderLust, Inc.</span>
+                <span class="footer-dot">·</span>
+                <a href="#">Privacy</a>
+                <span class="footer-dot">·</span>
+                <a href="#">Terms</a>
+                <span class="footer-dot">·</span>
+                <a href="#">Sitemap</a>
+            </div>
+            <div class="footer-locale">
+                <a href="#"><i class="fa-solid fa-globe"></i> English (IN)</a>
+                <a href="#"><i class="fa-solid fa-indian-rupee-sign"></i> INR</a>
+            </div>
         </div>
     </div>
 </footer>
