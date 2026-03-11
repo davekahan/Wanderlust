@@ -23,7 +23,7 @@ module.exports.showListiing = async (req,res) => {
     .populate("owner");
     if(!listing) {
         req.flash("error" , "listing you requested for is not existing");
-        res.redirect("/listings"); 
+        return res.redirect("/listings"); 
     }
     //console.log(listing);
     res.render("listings/show.ejs",{listing});
@@ -48,8 +48,8 @@ module.exports.createListing = async (req,res,next) => {
 
     newListing.geometry = response.body.features[0].geometry;
 
-    let savedListing = await newListing.save().then(() => console.log('data is saved')).catch((err) => console.log('error:',err));
-    console.log(savedListing);
+    let savedListing = await newListing.save();
+    console.log('data is saved', savedListing);
 
     req.flash("success" , "new listing created");
     res.redirect("/listings");
@@ -60,11 +60,11 @@ module.exports.renderEditForm = async (req,res) => {
     const listing = await Listing.findById(id);
     if(!listing) {
         req.flash("error" , "listing you requested for is not existing");
-        res.redirect("/listings"); 
+        return res.redirect("/listings"); 
     }
 
     let originalImageUrl = listing.image.url;
-    originalImageUrl = originalImageUrl.replace("/upload","/upload/ w_250");
+    originalImageUrl = originalImageUrl.replace("/upload","/upload/w_250");
     res.render("listings/edit.ejs",{listing,originalImageUrl});
 }
 

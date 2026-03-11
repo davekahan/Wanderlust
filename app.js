@@ -6,7 +6,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
-const methodOverride = "method-override"; // This was a string, should be require("method-override")
+const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError");
 
@@ -16,8 +16,6 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 
-const Listing = require("./models/listing");
-const Review = require("./models/review");
 const User = require("./models/user");
 
 const listingRouter = require("./routes/listing2.js");
@@ -26,9 +24,6 @@ const userRouter = require("./routes/user2.js");
 
 const dbUrl = process.env.ATLASDB_URL;
 const secret = process.env.SECRET || "fallbacksupersecretcode";
-
-// Corrected methodOverride require
-const methodOverrideMiddleware = require("method-override");
 
 
 main().then(() => {
@@ -50,7 +45,7 @@ async function main(){
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended: true}));
-app.use(methodOverrideMiddleware("_method")); // Use the required middleware
+app.use(methodOverride("_method"));
 app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 
@@ -75,6 +70,7 @@ const sessionOptions = {
         expires : new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
         maxAge : 7 * 24 * 60 * 60 * 1000,
         httpOnly : true,
+        secure : process.env.NODE_ENV === "production",
     }
 };
 
